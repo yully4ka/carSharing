@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarShareDB6Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityName" />
+    </Key>
+    <Property Name="CityName" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Routes" Relationship="Self.FK_Route_CityArr" FromRole="City" ToRole="Route" />
+    <NavigationProperty Name="Routes1" Relationship="Self.FK_Route_CityDep" FromRole="City" ToRole="Route" />
+  </EntityType>
+  <EntityType Name="Route">
+    <Key>
+      <PropertyRef Name="RouteID" />
+    </Key>
+    <Property Name="RouteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartingPoint" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ArrivingPoint" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="DepartingDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DepartingTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="FreeSpots" Type="Int32" Nullable="false" />
+    <Property Name="Driver" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="Self.FK_Route_CityArr" FromRole="Route" ToRole="City" />
+    <NavigationProperty Name="City1" Relationship="Self.FK_Route_CityDep" FromRole="Route" ToRole="City" />
+  </EntityType>
+  <Association Name="FK_Route_CityArr">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Route" Type="Self.Route" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityName" />
+      </Principal>
+      <Dependent Role="Route">
+        <PropertyRef Name="ArrivingPoint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Route_CityDep">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Route" Type="Self.Route" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityName" />
+      </Principal>
+      <Dependent Role="Route">
+        <PropertyRef Name="DepartingPoint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CarShareDB6Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cities" EntityType="Self.City" />
+    <EntitySet Name="Routes" EntityType="Self.Route" />
+    <AssociationSet Name="FK_Route_CityArr" Association="Self.FK_Route_CityArr">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Route" EntitySet="Routes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Route_CityDep" Association="Self.FK_Route_CityDep">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Route" EntitySet="Routes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

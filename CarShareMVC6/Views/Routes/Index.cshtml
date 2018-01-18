@@ -1,0 +1,68 @@
+﻿<head>
+    @model IEnumerable<CarShareMVC6.Models.Route>
+
+    @{ViewBag.Title = "Available routes";}
+
+    <!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="stylesheet" href="@Url.Content("~/Content/template/")style.css" media="screen">
+    <!--[if lte IE 7]><link rel="stylesheet" href="style.ie7.css" media="screen" /><![endif]-->
+    <link rel="stylesheet" href="@Url.Content("~/Content/template/")style.responsive.css" media="all">
+</head>
+
+<h2>Available routes</h2>
+<br />
+<p>@Html.ActionLink("Add a new route", "Create", "Routes", new { @class = "art-button" })</p>
+
+<table class="table" border="1">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartingPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArrivingPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartingDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartingTime)
+        </th>
+        <th>
+                @Html.DisplayNameFor(model => model.Driver)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FreeSpots)
+            </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartingPoint)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrivingPoint)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartingTime)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Driver)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FreeSpots)
+                </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+            </td>
+        </tr>
+    }
+
+</table>

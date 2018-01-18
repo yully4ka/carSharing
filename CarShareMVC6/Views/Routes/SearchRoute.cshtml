@@ -1,0 +1,63 @@
+﻿@model IEnumerable<CarShareMVC6.Models.Route>
+
+@{
+    ViewBag.Title = "SearchRoute";
+}
+
+<h2>SearchRoute</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartingPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArrivingPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartingDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartingTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FreeSpots)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Driver)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartingPoint)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArrivingPoint)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartingDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartingTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FreeSpots)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Driver)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RouteID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RouteID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RouteID })
+        </td>
+    </tr>
+}
+
+</table>

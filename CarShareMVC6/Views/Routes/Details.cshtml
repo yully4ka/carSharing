@@ -1,0 +1,66 @@
+﻿@model CarShareMVC6.Models.Route
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Route</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartingPoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartingPoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrivingPoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrivingPoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartingDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartingTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartingTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FreeSpots)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FreeSpots)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Driver)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Driver)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RouteID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

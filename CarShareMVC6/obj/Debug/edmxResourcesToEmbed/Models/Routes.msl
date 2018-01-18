@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CarShareDB6ModelStoreContainer" CdmEntityContainer="CarShareDB6Entities">
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="CarShareDB6Model.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Routes">
+      <EntityTypeMapping TypeName="CarShareDB6Model.Route">
+        <MappingFragment StoreEntitySet="Route">
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="DepartingPoint" ColumnName="DepartingPoint" />
+          <ScalarProperty Name="ArrivingPoint" ColumnName="ArrivingPoint" />
+          <ScalarProperty Name="DepartingDate" ColumnName="DepartingDate" />
+          <ScalarProperty Name="DepartingTime" ColumnName="DepartingTime" />
+          <ScalarProperty Name="FreeSpots" ColumnName="FreeSpots" />
+          <ScalarProperty Name="Driver" ColumnName="Driver" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
