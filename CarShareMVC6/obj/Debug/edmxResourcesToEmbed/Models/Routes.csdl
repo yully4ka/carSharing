@@ -16,7 +16,7 @@
     <Property Name="DepartingPoint" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="ArrivingPoint" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="DepartingDate" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="DepartingTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="DepartingTime" Type="DateTime" Nullable="false" />
     <Property Name="FreeSpots" Type="Int32" Nullable="false" />
     <Property Name="Driver" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
     <NavigationProperty Name="City" Relationship="Self.FK_Route_CityArr" FromRole="Route" ToRole="City" />

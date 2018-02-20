@@ -14,7 +14,7 @@
     <Property Name="DepartingPoint" Type="nchar" MaxLength="20" Nullable="false" />
     <Property Name="ArrivingPoint" Type="nchar" MaxLength="20" Nullable="false" />
     <Property Name="DepartingDate" Type="date" Nullable="false" />
-    <Property Name="DepartingTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="DepartingTime" Type="datetime" Nullable="false" />
     <Property Name="FreeSpots" Type="int" Nullable="false" />
     <Property Name="Driver" Type="nchar" MaxLength="20" Nullable="false" />
   </EntityType>

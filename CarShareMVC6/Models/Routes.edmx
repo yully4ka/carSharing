@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CarShareDB6Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CarShareDB6Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="City">
           <Key>
             <PropertyRef Name="CityName" />
@@ -19,7 +19,7 @@
           <Property Name="DepartingPoint" Type="nchar" MaxLength="20" Nullable="false" />
           <Property Name="ArrivingPoint" Type="nchar" MaxLength="20" Nullable="false" />
           <Property Name="DepartingDate" Type="date" Nullable="false" />
-          <Property Name="DepartingTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="DepartingTime" Type="datetime" Nullable="false" />
           <Property Name="FreeSpots" Type="int" Nullable="false" />
           <Property Name="Driver" Type="nchar" MaxLength="20" Nullable="false" />
         </EntityType>
@@ -59,8 +59,7 @@
             <End Role="Route" EntitySet="Route" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CarShareDB6Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -80,7 +79,7 @@
           <Property Name="DepartingPoint" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="ArrivingPoint" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="DepartingDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="DepartingTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="DepartingTime" Type="DateTime" Nullable="false" />
           <Property Name="FreeSpots" Type="Int32" Nullable="false" />
           <Property Name="Driver" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
           <NavigationProperty Name="City" Relationship="Self.FK_Route_CityArr" FromRole="Route" ToRole="City" />

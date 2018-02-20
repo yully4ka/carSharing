@@ -1,9 +1,11 @@
-﻿@model CarShareMVC6.Models.Route
+﻿<head>
+    @model CarShareMVC6.Models.Route
 
 @{
     ViewBag.Title = "Create";
 }
 
+</head>
 <h2>Create</h2>
 
 @using (Html.BeginForm()) 
@@ -17,8 +19,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DepartingPoint, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @*@Html.EditorFor(model => model.DepartingPoint, new { htmlAttributes = new { @class = "form-control" } })*@
-                @Html.DropDownList("DepartingPoint", String.Empty)
+                @Html.DropDownList("DepartingPoint", (IEnumerable<SelectListItem>)ViewData["citiesToList"],new { id = "SubCategoryId" })
                 @Html.ValidationMessageFor(model => model.DepartingPoint, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -26,17 +27,17 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ArrivingPoint, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ArrivingPoint, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("ArrivingPoint", (IEnumerable<SelectListItem>)ViewData["citiesToList"], new { id = "SubCategoryId" })
                 @Html.ValidationMessageFor(model => model.ArrivingPoint, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.DepartingDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.DepartingDate, htmlAttributes: new { @class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DepartingDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DepartingDate, "", new { @class = "text-danger" })
-            </div>
+                    @Html.EditorFor(model => model.DepartingDate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DepartingDate, "", new { @class = "text-danger" })
+</div>
         </div>
 
         <div class="form-group">

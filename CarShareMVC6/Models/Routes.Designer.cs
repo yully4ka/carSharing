@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'c:\users\vic\documents\visual studio 2017\Projects\CarShareMVC6\CarShareMVC6\Models\Routes.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\vic\Documents\Visual Studio 2017\Projects\CarShareMVC6\CarShareMVC6\Models\Routes.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
